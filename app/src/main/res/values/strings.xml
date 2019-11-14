@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">KagamiUser</string>
+    <string name="title_activity_main_drawer">MainDrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="getstarted">Get Started With Us</string>
+    <string name="mobile">Enter Mobile Number</string>
+    <string name="continues">Continue</string>
+    <string name="password">Set Password</string>
+    <string name="mobileno">Enter mobile number</string>
+    <string name="login">Login</string>
+    <string name="title_activity_main_bottom_nav">MainBottomNavActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="nearme">Near Me</string>
+    <string name="goout">Go Out</string>
+    <string name="search">Book now</string>
+    <string name="saved">Saved</string>
+    <string name="account">Account</string>
+    <string name="hairbeuty">Kagami</string>
+    <string name="started">Get Started</string>
+    <string name="boobkthebest">Book The Best</string>
+    <string name="indiancode">+91</string>
+    <string name="signup">Signup</string>
+    <string name="otp">Enter OTP</string>
+    <string name="email">Enter Email ID</string>
+    <string name="otpsent">An OTP(One Time Password) has been sent to your mobile number.</string>
+    <string name="otpverification">Verify OTP</string>
+    <string name="refferalcode">Enter Refferal Code(Optional)</string>
+    <string name="verify">Verify</string>
+    <string name="Start">Start</string>
+    <string name="name">Full Name</string>
+    <string name="edit">Edit</string>
+    <string name="update">Update</string>
+    <string name="address">Address</string>
+    <string name="takephoto">Profile Photo</string>
+    <string name="cancel">Cancel</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="authority">com.barberapp.barberuser.fileprovider</string>
+    <string name="pwd">Enter Password</string>
+    <string name="title_activity_update_navigation">UpdateNavigationActivity</string>
+    <string name="terms"><![CDATA[Terms & Conditions]]></string>
+    <string name="updateprofile">Update My Info</string>
+    <string name="noSaloons">We are Sorry ! No Saloons Near You!!</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="offers">Offers</string>
+    <string name="fav">Favourite</string>
+    <string name="collapsing_toolbar">Sallon Name</string>
+    <string name="nostaffs">No Saloon Staffs Avialable</string>
+    <string name="noservices">Service Not Avialable...</string>
+    <string name="myservices">My Services</string>
+    <string name="members">Members</string>
+    <string name="checkprice">Check Price</string>
+    <string name="styleprice">Style Name</string>
+    <string name="pac">Pac Name</string>
+    <string name="styletype">Style Type</string>
+    <string name="stylecost">Price</string>
+    <string name="timeslotbook">Choose Time Slot</string>
+    <string name="addservice">Select</string>
+    <string name="noprice">No price list available</string>
+    <string name="set">Set</string>
+    <string name="noaddress">Enter your address</string>
+    <string name="forgotpassword">Forgot Paswword?</string>
+    <string name="forgotPWd">Forgot Password</string>
+    <string name="send">Send</string>
+    <string name="newpwd">Enter new password</string>
+    <string name="confirmpwd">Confirm Password</string>
+    <string name="reset">Reset Password</string>
+    <string name="servicetiming">Duration(in min)</string>
+    <string name="book">Book</string>
+    <string name="saloonname">Saloon Name</string>
+    <string name="starttime">Start Time</string>
+    <string name="endtime">End Time</string>
+    <string name="confirm">Confirm</string>
+    <string name="nobooking">You don\'t have any Booking.</string>
+    <string name="style">Style</string>
+    <string name="timming">Timming</string>
+    <string name="price">Total Price</string>
+    <string name="date">Date</string>
+    <string name="walletbalance">Wallet Balance</string>
+    <string name="addmoney">Add Money</string>
+    <string name="mlmwallet">MLM Wallet</string>
+    <string name="amount">Amount</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <array name="subCat">
+        <item>No Service Available</item>
+    </array>
+</resources>

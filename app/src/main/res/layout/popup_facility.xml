@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:id="@+id/rv_facility"
+    android:layout_weight="1"
+    android:padding="10dp"
+    />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:text="Search"
+        android:background="@color/white"
+        android:textColor="@color/colorPrimary"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:id="@+id/search_facility_btn"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="Close"
+            android:background="@color/white"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:id="@+id/close_facility"/>
+
+    </LinearLayout>
+</LinearLayout>

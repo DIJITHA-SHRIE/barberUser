@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="2dp">
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check_facility"
+        android:text="TV"
+        android:textColor="@color/white"
+        android:buttonTint="@color/white"/>
+
+    <TextView android:textColor="@color/white"
+        android:id="@+id/fac_more"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Refrirator"
+        android:drawableLeft="@drawable/checked"
+        android:drawablePadding="10dp"/>
+
+</LinearLayout>

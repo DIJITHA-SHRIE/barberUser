@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_dummy_splash"
+    tools:context=".view.activity.OtpActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <include layout="@layout/app_main_view"
+        android:id="@+id/tag_otp"/>
+    <LinearLayout
+        android:layout_below="@+id/tag_otp"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:background="@drawable/corner_background"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/getstarted"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"/>
+        <View
+            android:layout_width="50dp"
+            android:layout_height="3dp"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/otpsent"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="5dp"
+                android:id="@+id/textInputMobile"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorPrimaryDark">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etMobile"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/black"
+                    android:hint="@string/mobile"
+                    app:passwordToggleEnabled="true"
+                    android:inputType="number"
+                    android:digits="0123456789"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/textOnetimepwd"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etOTP"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/black"
+                    android:hint="@string/otpverification"
+                    android:inputType="number"
+                    android:digits="0123456789"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/textInputrefferal"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etRefferalCoe"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:hint="@string/refferalcode"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/blink_gren_button"
+            android:text="@string/verify"
+            android:textColor="@android:color/white"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="15dp"
+            android:textSize="15sp"
+            android:id="@+id/btnVerify"/>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/progresBarMobile"
+        android:visibility="gone"/>
+    </RelativeLayout>
+</ScrollView>

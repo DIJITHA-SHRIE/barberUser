@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.SearchForServiceFrag"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/ic_dummy_splash"
+        android:id="@+id/linear_book_img">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:id="@+id/book_linear_lay"
+        >
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Location"
+       android:textSize="20sp"
+       android:padding="10dp"
+       android:textColor="@color/white"
+       android:ems="13"
+       />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/edit_border"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ss_location"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/white"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/edit_border"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ss_area"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Gender"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/edit_border"
+        android:layout_marginTop="5dp"
+        android:entries="@array/gender"
+        android:id="@+id/gender_ss"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Service"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/white"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/edit_border"
+        android:layout_marginTop="5dp"
+        android:id="@+id/category_spin"
+        android:visibility="gone"/>
+
+        <EditText android:id="@+id/ss_popup_serv_cat"
+            android:background="@drawable/edit_border"
+            android:padding="10dp"
+            android:focusable="false"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Show available service categories"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Services"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/white"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/edit_border"
+        android:layout_marginTop="5dp"
+        android:id="@+id/subCategory_spin"
+        android:visibility="gone"/>
+        <EditText android:id="@+id/ss_act_serv_sub_cat"
+            android:background="@drawable/edit_border"
+            android:padding="10dp"
+            android:focusable="false"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Show available services"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sercvice Time "
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/white"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/edit_border"
+        android:layout_marginTop="5dp"
+        android:id="@+id/time_ss"
+        android:focusable="false"
+        android:textColor="@color/white"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:background="@drawable/chips_button"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:id="@+id/seacrchSaloonBtn"
+        />
+    </LinearLayout>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/progress_ss"
+            android:visibility="gone"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/saloon_search_rev"
+            android:layout_margin="10dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

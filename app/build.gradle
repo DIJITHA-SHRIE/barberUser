@@ -60,12 +60,13 @@ dependencies {
     }
     implementation 'com.android.volley:volley:1.1.1'
     testImplementation 'org.codehaus.groovy:groovy-all:2.4.15'
-    implementation 'com.google.firebase:firebase-core:16.0.0'
-    implementation 'com.google.android.gms:play-services-analytics:16.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+
     implementation 'com.github.jgabrielfreitas:BlurImageView:1.0.1'
     implementation 'jp.wasabeef:glide-transformations:4.0.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.5@aar'
+    compile 'com.google.firebase:firebase-messaging:17.3.0'
 }
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

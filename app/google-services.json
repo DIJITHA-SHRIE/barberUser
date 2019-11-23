@@ -1,50 +1,42 @@
 {
   "project_info": {
-    "project_number": "187105308295",
-    "firebase_url": "https://barberuser.firebaseio.com",
-    "project_id": "barberuser",
-    "storage_bucket": "barberuser.appspot.com"
+    "project_number": "225602141084",
+    "firebase_url": "https://kagamiuser.firebaseio.com",
+    "project_id": "kagamiuser",
+    "storage_bucket": "kagamiuser.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:187105308295:android:0e24ff6c9c50cb5b",
+        "mobilesdk_app_id": "1:225602141084:android:f0d1413e960c25cd182659",
         "android_client_info": {
           "package_name": "com.barberapp.barberuser"
         }
       },
       "oauth_client": [
         {
-          "client_id": "187105308295-d685lblr7poq9jespmeallq2ktus8q45.apps.googleusercontent.com",
+          "client_id": "225602141084-0qot45lbj6s3um35106dabi0ts680jlr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.barberapp.barberuser",
-            "certificate_hash": "691b1c458f65cb424ccb1fecb137dd3b910297dd"
+            "certificate_hash": "295f3c01e2c497f9ea6a64229b1c178344da0236"
           }
         },
         {
-          "client_id": "187105308295-og5if65if9mnf8jgaon6d92c9bqvpetm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.barberapp.barberuser",
-            "certificate_hash": "cf6d766686f270e1bcd7edb5d677a4c58ba1af16"
-          }
-        },
-        {
-          "client_id": "187105308295-dg6a3fklo3ufu8aaerfdqcl57u7jqmlq.apps.googleusercontent.com",
+          "client_id": "225602141084-pjiuqf80j8i1375ps69u080jav2p83k5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAh8yteuwiUK6eM5xH0hZBuxFzHZ5fuuJo"
+          "current_key": "AIzaSyA6Sih4PrKfT4r4zuGwMQKh_St1VQpShAg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "187105308295-dg6a3fklo3ufu8aaerfdqcl57u7jqmlq.apps.googleusercontent.com",
+              "client_id": "225602141084-pjiuqf80j8i1375ps69u080jav2p83k5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

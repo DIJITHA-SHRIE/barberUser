@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.barberapp.barberuser.utils.AppUtils;
 import com.barberapp.barberuser.view.activity.BaseActivity;
 import com.barberapp.barberuser.view.activity.SearchBasedFacility;
 import com.google.android.gms.location.ActivityTransition;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -85,6 +87,19 @@ public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServi
         });
 
         holder.txtTotalPrice.setText("Rs:"+ data.getTotalPrice() );
+
+        String getSaloonImage = data.getImage().replaceAll(" ", "%20");
+        Picasso with = Picasso.with(this.context);
+        StringBuilder sb2 = new StringBuilder();
+        String str = "http://kagami.co.in/admin/public/images/logo/";
+        sb2.append(str);
+        sb2.append(getSaloonImage);
+        with.load(sb2.toString()).placeholder(R.drawable.ic_salloon).into(holder.imgItemImage);
+        StringBuilder sb3 = new StringBuilder();
+        sb3.append(str);
+        sb3.append(getSaloonImage);
+        Log.i("KagamiImage", sb3.toString());
+
 
     }
 

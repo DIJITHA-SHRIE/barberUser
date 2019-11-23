@@ -144,7 +144,7 @@ public class NearMeFragment extends Fragment implements NearMeView, ShowOnMapLis
             TextSliderView textSliderView = new TextSliderView(getContext());
             String getAdvImage = ((AdvData) advDataArrayList.get(i)).getImage().replaceAll(" ", "%20");
             StringBuilder sb2 = new StringBuilder();
-            String str2 = "http://www.kagami.co.in/admin/public/images/adv_images/";
+            String str2 = "http://kagami.co.in/admin/public/images/advimages/";
             sb2.append(str2);
             sb2.append(getAdvImage);
             if (sb2.toString() != null) {
@@ -152,6 +152,7 @@ public class NearMeFragment extends Fragment implements NearMeView, ShowOnMapLis
                 StringBuilder sb3 = new StringBuilder();
                 sb3.append(str2);
                 sb3.append(getAdvImage);
+                Log.i("TextsliderImage",sb3.toString());
                 description.image(sb3.toString()).empty(R.drawable.ic_salloon).setScaleType(BaseSliderView.ScaleType.Fit).setOnSliderClickListener(this);
             } else {
                 textSliderView.description(str).image((int) R.drawable.ic_salloon).setScaleType(BaseSliderView.ScaleType.Fit).setOnSliderClickListener(this);

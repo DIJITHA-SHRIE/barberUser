@@ -24,11 +24,12 @@ public class LoginPresenter<T extends LoginView> {
         tWeakReference = new WeakReference<>(view);
         compositeDisposable = new CompositeDisposable();
     }
-    public void login(final String mobile, String password){
+    public void login(final String mobile, String password,String token){
         tWeakReference.get().showLoading(true);
         HashMap<String,String> hashMap = new HashMap<>(2);
         hashMap.put("mobile_no",mobile);
         hashMap.put("password",password);
+        hashMap.put("fb_token",token);
         NetworkManager.getInstance().getApiServices().login(hashMap)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

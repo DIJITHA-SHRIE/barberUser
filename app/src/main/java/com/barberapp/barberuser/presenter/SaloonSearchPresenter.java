@@ -3,6 +3,8 @@ package com.barberapp.barberuser.presenter;
 import com.barberapp.barberuser.network.NetworkManager;
 import com.barberapp.barberuser.pojos.CategoryResponse;
 import com.barberapp.barberuser.pojos.FacilityResponse;
+import com.barberapp.barberuser.pojos.FirebaseParnterMessageRes;
+import com.barberapp.barberuser.pojos.FirebasePartnerResponse;
 import com.barberapp.barberuser.pojos.SaloonResponse;
 import com.barberapp.barberuser.pojos.SaloonSearchResponse;
 import com.barberapp.barberuser.pojos.SubCategoryResponse;
@@ -146,6 +148,40 @@ public class SaloonSearchPresenter<T extends SearchSaloonView> {
                             tWeakReference.get().onFacilitySearch(saloonResponse);
                         }else {
                             tWeakReference.get().onFacilitySearchError(AppConstants.EXTRA_API_ERROR);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        tWeakReference.get().showLoading(false);
+                        tWeakReference.get().showError(AppUtils.showError(e));
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void fetchFirebaseRes(String title,String message,String barberID){
+        tWeakReference.get().showLoading(true);
+        NetworkManager.getInstance().getApiServices().fetchFBRes(title,message,barberID)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<FirebasePartnerResponse>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        compositeDisposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(FirebasePartnerResponse saloonResponse) {
+                        tWeakReference.get().showLoading(false);
+                        if (saloonResponse!=null ){
+                            tWeakReference.get().onFirebasePartnerCall(saloonResponse);
+                        }else {
+                            tWeakReference.get().onFirebasePartnerError(AppConstants.EXTRA_API_ERROR);
                         }
                     }
 

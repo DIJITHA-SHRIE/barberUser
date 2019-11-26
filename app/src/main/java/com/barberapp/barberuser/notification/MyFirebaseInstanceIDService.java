@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.barberapp.barberuser.utils.AppSharedPrefference;
 import com.barberapp.barberuser.utils.Constants;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
@@ -21,7 +22,11 @@ public class MyFirebaseInstanceIDService  extends FirebaseInstanceIdService
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        preferences.edit().putString(Constants.FIREBASE_TOKEN, refreshedToken).apply();
+      /*  SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        preferences.edit().putString(Constants.FIREBASE_TOKEN, refreshedToken).apply();*/
+
+        AppSharedPrefference preference = new AppSharedPrefference(getApplicationContext());
+        preference.saveFBToken(refreshedToken);
+
     }
 }

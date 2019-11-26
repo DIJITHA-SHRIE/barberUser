@@ -11,12 +11,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.barberapp.barberuser.R;
 import com.barberapp.barberuser.helper.CallClickedListner;
 import com.barberapp.barberuser.helper.ShowOnMapListner;
+import com.barberapp.barberuser.pojos.CategoryResponse;
+import com.barberapp.barberuser.pojos.FacilityResponse;
+import com.barberapp.barberuser.pojos.FirebasePartnerResponse;
 import com.barberapp.barberuser.pojos.SaloonSearchData;
+import com.barberapp.barberuser.pojos.SaloonSearchResponse;
+import com.barberapp.barberuser.pojos.SubCategoryResponse;
+import com.barberapp.barberuser.presenter.SaloonSearchPresenter;
 import com.barberapp.barberuser.utils.AppUtils;
+import com.barberapp.barberuser.view.SaloonView;
+import com.barberapp.barberuser.view.SearchSaloonView;
 import com.barberapp.barberuser.view.activity.BaseActivity;
 import com.barberapp.barberuser.view.activity.SearchBasedFacility;
 import com.google.android.gms.location.ActivityTransition;
@@ -27,11 +36,16 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServiceAdapter.ViewHolder> {
+public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServiceAdapter.ViewHolder> implements SearchSaloonView {
     ArrayList<SaloonSearchData> saloonSearchDataArrayList;
+    SaloonSearchPresenter<SearchSaloonView> presenter;
+
+
+
     Context context;
     private ShowOnMapListner showonMap;
     private CallClickedListner callClickedListner;
+    String subCategoryVal;
     public void setOncallClicklisner(CallClickedListner listner){
         this.callClickedListner=listner;
     }
@@ -39,9 +53,13 @@ public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServi
         this.showonMap = showonMap;
     }
 
-    public SearchForServiceAdapter(ArrayList<SaloonSearchData> saloonSearchDataArrayList, Context context) {
+    public SearchForServiceAdapter(ArrayList<SaloonSearchData> saloonSearchDataArrayList, Context context,String subCategoryVal) {
         this.saloonSearchDataArrayList = saloonSearchDataArrayList;
         this.context = context;
+        this.subCategoryVal=subCategoryVal;
+        Log.i("SubCategoryValue",subCategoryVal);
+        presenter = new SaloonSearchPresenter<>();
+        this.presenter.setSearchSaloonView(this);
     }
 
     @NonNull
@@ -100,6 +118,14 @@ public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServi
         sb3.append(getSaloonImage);
         Log.i("KagamiImage", sb3.toString());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(context,"Saloon view clicked",Toast.LENGTH_SHORT).show();
+                presenter.fetchFirebaseRes("Booking Arrived",subCategoryVal,data.getOwned_by());
+            }
+        });
+
 
     }
 
@@ -135,5 +161,68 @@ public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServi
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
+    }
+
+    @Override
+    public void onFetchSearchedSaloon(SaloonSearchResponse responses) {
+
+    }
+
+    @Override
+    public void onFetchSaloonError(String error) {
+
+    }
+
+    @Override
+    public void onFetchCategory(CategoryResponse response) {
+
+    }
+
+    @Override
+    public void onFetchCategoryError(String error) {
+
+    }
+
+    @Override
+    public void onFetchSubCategory(SubCategoryResponse response) {
+
+    }
+
+    @Override
+    public void onFetchSubCategoryError(String error) {
+
+    }
+
+    @Override
+    public void onFacilitySearch(FacilityResponse response) {
+
+    }
+
+    @Override
+    public void onFacilitySearchError(String error) {
+
+    }
+
+    @Override
+    public void onFirebasePartnerCall(FirebasePartnerResponse response) {
+        if(response.getSuccess()== 1){
+        Toast.makeText(context,"Notification sent to the saloon Owner",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    public void onFirebasePartnerError(String err) {
+
+    }
+
+    @Override
+    public void showLoading(boolean isLoaing) {
+
+    }
+
+    @Override
+    public void showError(String error) {
+
     }
 }

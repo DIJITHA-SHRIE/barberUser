@@ -39,4 +39,13 @@ public class AppSharedPrefference {
     public String getTempMobile(){
         return sharedPreferences.getString(AppConstants.EXTRA_TEMP_MOBILE,"");
     }
+
+    public void saveFBToken(String token){
+        editor.putString(Constants.FIREBASE_TOKEN,token);
+        editor.commit();
+    }
+
+    public String getFbToken(){
+        return sharedPreferences.getString(Constants.FIREBASE_TOKEN,"");
+    }
 }

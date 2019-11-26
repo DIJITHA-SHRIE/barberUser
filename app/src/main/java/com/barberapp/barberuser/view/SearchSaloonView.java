@@ -2,6 +2,7 @@ package com.barberapp.barberuser.view;
 
 import com.barberapp.barberuser.pojos.CategoryResponse;
 import com.barberapp.barberuser.pojos.FacilityResponse;
+import com.barberapp.barberuser.pojos.FirebasePartnerResponse;
 import com.barberapp.barberuser.pojos.SaloonSearchResponse;
 import com.barberapp.barberuser.pojos.SubCategoryResponse;
 
@@ -16,5 +17,7 @@ public interface SearchSaloonView extends BaseView{
     void onFetchSubCategoryError(String error);
     void onFacilitySearch(FacilityResponse response);
     void onFacilitySearchError(String error);
+    void onFirebasePartnerCall(FirebasePartnerResponse response);
+    void onFirebasePartnerError(String err);
 
 }

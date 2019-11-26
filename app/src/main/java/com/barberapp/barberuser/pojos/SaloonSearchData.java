@@ -4,6 +4,17 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class SaloonSearchData {
+    public String getOwned_by() {
+        return owned_by;
+    }
+
+    public void setOwned_by(String owned_by) {
+        this.owned_by = owned_by;
+    }
+
+    @SerializedName("owned_by")
+    @Expose
+    private String owned_by;
     @SerializedName("distance")
     @Expose
     private String distance;

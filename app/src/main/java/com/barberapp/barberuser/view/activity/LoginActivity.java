@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,7 +35,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     TextView txtForgotPassword;
     private LoginPresenter<LoginView> loginViewLoginPresenter;
     private AppSharedPrefference appSharedPrefference;
-    private String mobile;
+    private String mobile,fb_token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
             etMobile.setText(mobile);
         }
         appSharedPrefference = new AppSharedPrefference(this);
+        fb_token=appSharedPrefference.getFbToken();
+        Log.i("FB_TOKEN",fb_token);
         loginViewLoginPresenter = new LoginPresenter<>();
         loginViewLoginPresenter.setView(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +69,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
                 else {
                     etpassword.setError(null);
                     etMobile.setError(null);
-                    loginViewLoginPresenter.login(mobile,password);
+                    loginViewLoginPresenter.login(mobile,password,fb_token);
                 }
             }
         });

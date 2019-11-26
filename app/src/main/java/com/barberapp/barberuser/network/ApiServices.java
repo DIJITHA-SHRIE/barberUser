@@ -4,6 +4,8 @@ import com.barberapp.barberuser.pojos.AdvResponse;
 import com.barberapp.barberuser.pojos.CategoryResponse;
 import com.barberapp.barberuser.pojos.CheckSumReponse;
 import com.barberapp.barberuser.pojos.FacilityResponse;
+import com.barberapp.barberuser.pojos.FirebaseParnterMessageRes;
+import com.barberapp.barberuser.pojos.FirebasePartnerResponse;
 import com.barberapp.barberuser.pojos.MemberReponse;
 import com.barberapp.barberuser.pojos.MobileResponse;
 import com.barberapp.barberuser.pojos.MyBookingResponse;
@@ -65,6 +67,11 @@ public interface ApiServices {
     @FormUrlEncoded
     @POST("m_saloon_subCategory.php")
     Observable<SubCategoryResponse> fetchSubCatAPI(@Field("cat_id") String cat_id);
+
+    @FormUrlEncoded
+    @POST("FCM/sendSinglePush.php")
+    Observable<FirebasePartnerResponse> fetchFBRes(@Field("title") String title, @Field("message") String message,
+                                                   @Field("barber_id") String barber_id);
 
 
     @FormUrlEncoded

@@ -44,6 +44,7 @@ import com.barberapp.barberuser.helper.onMultipleServiceListener;
 import com.barberapp.barberuser.pojos.CategoryData;
 import com.barberapp.barberuser.pojos.CategoryResponse;
 import com.barberapp.barberuser.pojos.FacilityResponse;
+import com.barberapp.barberuser.pojos.FirebasePartnerResponse;
 import com.barberapp.barberuser.pojos.SaloonSearchData;
 import com.barberapp.barberuser.pojos.SaloonSearchResponse;
 import com.barberapp.barberuser.pojos.SubCategoryData;
@@ -104,6 +105,8 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
     EditText ss_popup_serv_cat;
     @BindView(R.id.ss_act_serv_sub_cat)
     EditText ss_act_serv_sub_cat;
+
+    String trimmedSelectedSubServ;
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
@@ -180,7 +183,7 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
         ArrayList<SaloonSearchData> saloonSearchDataArrayList = responses.getData();
         Log.i("saloonSearchArrayList", responses.getMessage());
         if (saloonSearchDataArrayList != null) {
-            SearchForServiceAdapter adapter = new SearchForServiceAdapter(saloonSearchDataArrayList, getContext());
+            SearchForServiceAdapter adapter = new SearchForServiceAdapter(saloonSearchDataArrayList, getContext(),trimmedSelectedSubServ);
             this.saloon_search_rev.setLayoutManager(new LinearLayoutManager(getContext()));
             this.saloon_search_rev.addItemDecoration(new DividerItemDecoration(getActivity(), 1));
             this.saloon_search_rev.setAdapter(adapter);
@@ -286,6 +289,16 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
     public void onFacilitySearchError(String error) {
     }
 
+    @Override
+    public void onFirebasePartnerCall(FirebasePartnerResponse response) {
+
+    }
+
+    @Override
+    public void onFirebasePartnerError(String err) {
+
+    }
+
     public void showLoading(boolean isLoaing) {
         this.progress_ss.setVisibility(View.GONE);
     }
@@ -336,7 +349,7 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
         String str = " ";
         String str2 = "";
         Log.i("getSelecedSubFrag", this.getSelecedSubServices.toString().replaceAll(str, str2));
-        String trimmedSelectedSubServ = this.getSelecedSubServices.toString().replaceAll(str, str2);
+         trimmedSelectedSubServ = this.getSelecedSubServices.toString().replaceAll(str, str2);
         SaloonSearchPresenter<SearchSaloonView> saloonSearchPresenter2 = this.saloonSearchPresenter;
         StringBuilder sb = new StringBuilder();
         sb.append(str2);

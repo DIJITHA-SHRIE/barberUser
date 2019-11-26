@@ -12,6 +12,7 @@ import com.barberapp.barberuser.R;
 import com.barberapp.barberuser.helper.FacilityListener;
 import com.barberapp.barberuser.pojos.CategoryResponse;
 import com.barberapp.barberuser.pojos.FacilityResponse;
+import com.barberapp.barberuser.pojos.FirebasePartnerResponse;
 import com.barberapp.barberuser.pojos.SaloonSearchResponse;
 import com.barberapp.barberuser.pojos.SubCategoryResponse;
 import com.barberapp.barberuser.presenter.SaloonSearchPresenter;
@@ -78,6 +79,16 @@ public class SearchBasedFacility extends AppCompatActivity implements SearchSalo
     }
 
     public void onFacilitySearchError(String error) {
+    }
+
+    @Override
+    public void onFirebasePartnerCall(FirebasePartnerResponse response) {
+
+    }
+
+    @Override
+    public void onFirebasePartnerError(String err) {
+
     }
 
     public void showLoading(boolean isLoaing) {

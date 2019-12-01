@@ -61,5 +61,4 @@ public class FirebasePartnerResponse {
     public void setResults(List<FirebaseParnterMessageRes> results) {
         this.results = results;
     }
-
 }

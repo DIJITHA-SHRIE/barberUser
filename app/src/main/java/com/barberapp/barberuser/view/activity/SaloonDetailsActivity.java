@@ -55,7 +55,8 @@ import java.util.HashMap;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SaloonDetailsActivity extends AppCompatActivity implements SaloonView, OnCheckedStaffListner, OnSaloonServiceClickListner, OnSelectServices {
+public class SaloonDetailsActivity extends AppCompatActivity implements SaloonView, OnCheckedStaffListner,
+        OnSaloonServiceClickListner, OnSelectServices {
     private Saloon saloon;
     @BindView(R.id.toolbarImage)
     ImageView toolbarImage;

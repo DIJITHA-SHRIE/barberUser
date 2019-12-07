@@ -13,7 +13,7 @@ public class MyBooking {
     private String status;
     private String remark;
     private String saloon_name;
-    private String style_name;
+    private String  style_name;
     private String pac_name;
     private String cat_name;
 

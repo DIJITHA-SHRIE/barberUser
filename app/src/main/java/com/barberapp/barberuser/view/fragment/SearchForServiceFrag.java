@@ -398,12 +398,7 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
 
         TimePickerDialog mTimePicker = new TimePickerDialog(getContext(), new OnTimeSetListener() {
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                EditText editText = SearchForServiceFrag.this.time_ss;
-                StringBuilder sb = new StringBuilder();
-                sb.append(selectedHour);
-                sb.append(":");
-                sb.append(selectedMinute);
-                editText.setText(sb.toString());
+                time_ss.setText(selectedMinute);
             }
         }, hour, minute, true);
         mTimePicker.setTitle("Select Time");
@@ -439,9 +434,9 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
     }
     @OnClick(R.id.ss_act_serv_sub_cat)
     public void onSelectSubCategories(View view) {
-        Intent in = new Intent(getActivity(), SubCategoryActivity.class);
+       /* Intent in = new Intent(getActivity(), SubCategoryActivity.class);
         in.putExtra("SUBCATEGORIES", this.subCategoryDataArrayList);
         in.putExtra("SELECTEDSERVICE", this.getMultipleService);
-        startActivityForResult(in, 1001);
+        startActivityForResult(in, 1001);*/
     }
 }

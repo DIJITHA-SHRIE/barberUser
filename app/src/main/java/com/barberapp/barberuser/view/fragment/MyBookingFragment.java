@@ -1,5 +1,6 @@
 package com.barberapp.barberuser.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.app.Activity.RESULT_OK;
+
 
 public class MyBookingFragment extends Fragment implements MyBookingView {
     @BindView(R.id.rcvMyBooking)
@@ -37,6 +40,16 @@ public class MyBookingFragment extends Fragment implements MyBookingView {
     TextView txtNoBBoking;
     private MyBookingPresenter<MyBookingView> myBookingPresenter;
     private AppSharedPrefference appSharedPrefference;
+    private static final int CCAVENU_CODE=201;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CCAVENU_CODE && resultCode == RESULT_OK && data != null) {
+            Toast.makeText(getActivity(), "Amount added to wallet.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

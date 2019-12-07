@@ -114,8 +114,12 @@ public class SearchForServiceAdapter extends RecyclerView.Adapter<SearchForServi
                 ((Activity) context).startActivityForResult(in, 1002);
             }
         });
+        if(data.getTotalPrice()!=null){
 
-        holder.txtTotalPrice.setText("Rs:"+ data.getTotalPrice() );
+        holder.txtTotalPrice.setText("Rs:"+ data.getTotalPrice() );}
+        else{
+            holder.txtTotalPrice.setText("Rs:"+ "NA" );
+        }
 
         String getSaloonImage = data.getImage().replaceAll(" ", "%20");
         Picasso with = Picasso.with(this.context);

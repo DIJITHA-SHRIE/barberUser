@@ -398,7 +398,8 @@ public class SearchForServiceFrag extends Fragment implements SearchSaloonView, 
 
         TimePickerDialog mTimePicker = new TimePickerDialog(getContext(), new OnTimeSetListener() {
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                time_ss.setText(selectedMinute);
+                String selTime = String.format("%02d:%02d", selectedHour, selectedMinute);
+                time_ss.setText(selTime);
             }
         }, hour, minute, true);
         mTimePicker.setTitle("Select Time");

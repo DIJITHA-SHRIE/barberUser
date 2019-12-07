@@ -58,26 +58,28 @@ public class MyBookingAdapter extends RecyclerView.Adapter<MyBookingAdapter.MyBo
 
         if(status.equals("0")){
             myBookingHolder.pay_money.setText("WAIT LIST");
-            myBookingHolder.pay_money.setClickable(false);
+
+
         }
        else  if(status.equals("1")){
             myBookingHolder.pay_money.setText("PAY");
-            myBookingHolder.pay_money.setClickable(true);
+
         } else if(status.equals("2")){
             myBookingHolder.pay_money.setText("REJECTED");
-            myBookingHolder.pay_money.setClickable(false);
 
         } else if(status.equals("3")){
             myBookingHolder.pay_money.setText("PAID");
-            myBookingHolder.pay_money.setClickable(false);
+
         }
 
-        myBookingHolder.pay_money.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    addMoney(myBooking.getTotal_price());
-            }
-        });
+       if(status.equals("1")) {
+           myBookingHolder.pay_money.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   addMoney(myBooking.getTotal_price());
+               }
+           });
+       }
     }
 
     @Override
